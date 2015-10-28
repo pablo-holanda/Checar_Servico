@@ -38,7 +38,7 @@ if __name__ == "__main__":
     while True:
         try:
             # Tenta acessar a URL dentro do timeout definido em segundos
-            code = urllib2.urlopen("http://pmaq.lais.huol.ufrn.br/amaq", timeout=1).getcode()
+            code = urllib2.urlopen("http://pmaq.lais.huol.ufrn.br/amaq", timeout=10).getcode()
         except urllib2.URLError as e:
             # Caso não consiga acessar, checamos o tipo de erro
             if str(e.reason) == 'timed out':
@@ -51,4 +51,4 @@ if __name__ == "__main__":
         except:
             pass
 
-        sleep(10)
+        sleep(60)
