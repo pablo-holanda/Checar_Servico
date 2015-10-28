@@ -2,6 +2,7 @@
 __author__ = 'pabloholanda'
 import urllib2
 from time import sleep
+import yaml
 
 while True:
     try:
