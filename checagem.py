@@ -19,10 +19,12 @@ def enviar_sms(tipo_erro):
         data = yaml.load(destinatarios)
 
     for destinatario in data['destinatarios']:
-        arquivo = open('/var/spool/sms/outgoing/erro.txt', 'a')
+        destino = '/var/spool/sms/outgoing/%s.txt' % destinatario
+        arquivo = open(destino, 'a')
         arquivo.write("To: %s \n\nOlá %s, estamos enfrentando o seguinte erro no servidor do AMAQ: %s." %
                       (data['destinatarios'][destinatario]['telefone'], destinatario, tipo_erro))
         arquivo.close()
+        sleep(0.5)
 
 
 def signal_handler(signal, frame):
