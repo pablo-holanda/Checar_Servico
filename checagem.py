@@ -4,6 +4,13 @@ import urllib2
 from time import sleep
 import yaml
 
+
+def carregar_configuracoes():
+    with open("config.yaml", "r") as configuracoes:
+        data = yaml.load(configuracoes)
+
+
+
 while True:
     try:
         # Tenta acessar a URL dentro do timeout definido em segundos
