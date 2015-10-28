@@ -13,6 +13,18 @@ def carregar_configuracoes():
         data = yaml.load(configuracoes)
 
 
+def enviar_sms(tipo_erro):
+
+    with open("config.yaml", "r") as destinatarios:
+        data = yaml.load(destinatarios)
+
+    for destinatario in data['destinatarios']:
+        arquivo = open('/var/spool/sms/outgoing/erro.txt', 'a')
+        arquivo.write("To: %s \n\nOla %s, estamos enfrentando o seguinte erro no servidor: %s" %
+                      (data['destinatarios'][destinatario]['telefone'], destinatario, tipo_erro))
+        arquivo.close()
+
+
 def signal_handler(signal, frame):
     print('Você apertou Ctrl+C!')
     sys.exit(0)
@@ -28,12 +40,12 @@ if __name__ == "__main__":
         except urllib2.URLError as e:
             # Caso não consiga acessar, checamos o tipo de erro
             if str(e.reason) == 'timed out':
-                print "Timed out"
+                enviar_sms(str(e.reason))
             elif str(e.reason) == '[Errno 61] Connection refused':
-                print "Refused"
+                 enviar_sms(str(e.reason))
         except socket.timeout as e:
             if str(e) == 'timed out':
-                print "socket timed out"
+                 enviar_sms(str(e.reason))
         except:
             pass
 
