@@ -20,7 +20,7 @@ def enviar_sms(tipo_erro):
 
     for destinatario in data['destinatarios']:
         arquivo = open('/var/spool/sms/outgoing/erro.txt', 'a')
-        arquivo.write("To: %s \n\nOla %s, estamos enfrentando o seguinte erro no servidor: %s" %
+        arquivo.write("To: %s \n\nOlá %s, estamos enfrentando o seguinte erro no servidor do AMAQ: %s." %
                       (data['destinatarios'][destinatario]['telefone'], destinatario, tipo_erro))
         arquivo.close()
 
