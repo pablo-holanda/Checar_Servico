@@ -38,7 +38,7 @@ if __name__ == "__main__":
         for projeto in data['projetos']:
             try:
                 # Tenta acessar a URL dentro do timeout definido em segundos
-                code = urllib2.urlopen(data['projetos'][projeto]['url'], timeout=0.1).getcode()
+                code = urllib2.urlopen(data['projetos'][projeto]['url'], timeout=3).getcode()
             except urllib2.URLError as e:
                 # Caso não consiga acessar, checamos o tipo de erro
                 if str(e.reason) == 'timed out':
