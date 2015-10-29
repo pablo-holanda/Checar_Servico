@@ -6,6 +6,7 @@ import yaml
 import socket
 import sys
 import signal
+import os
 
 
 def carregar_configuracoes():
@@ -30,7 +31,7 @@ def signal_handler(signal, frame):
 
 if __name__ == "__main__":
     signal.signal(signal.SIGINT, signal_handler)
-
+    print "Process ID = ", os.getpid()
     data = carregar_configuracoes()
 
     while True:
