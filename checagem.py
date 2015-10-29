@@ -51,4 +51,4 @@ if __name__ == "__main__":
             except:
                 enviar_sms(data['projetos'][projeto], projeto, 'Valha-me deus, erro desconhecido')
 
-        sleep(60)
+        sleep(120)
