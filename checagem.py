@@ -48,6 +48,6 @@ if __name__ == "__main__":
                 if str(e) == 'timed out':
                      enviar_sms(data['projetos'][projeto], projeto, str(e.reason))
             except:
-                pass
+                enviar_sms(data['projetos'][projeto], projeto, 'Valha-me deus, erro desconhecido')
 
         sleep(60)
