@@ -1,9 +1,19 @@
-destinatarios:
-  Pablo:
-    telefone: '5584997000080'
-  Marcel:
-    telefone: '5584981094570'
-  Dani:
-    telefone: '5584994437356'
-  Sedir:
-    telefone: '5584991171521'
+projetos:
+
+  AMAQ:
+    url: 'http://pmaq.lais.huol.ufrn.br/amaq'
+    destinatarios:
+      Pablo:
+        telefone: '5584997000080'
+      Marcel:
+        telefone: '5584981094570'
+      Dani:
+        telefone: '5584994437356'
+      Sedir:
+        telefone: '5584991171521'
+
+  Teleconsultoria:
+    url: 'http://teleconsultoria.telessaude.ufrn.br/'
+    destinatarios:
+      Higor:
+        telefone: '5584991334383'
