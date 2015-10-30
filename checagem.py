@@ -47,7 +47,7 @@ if __name__ == "__main__":
                      enviar_sms(data['projetos'][projeto], projeto, str(e.reason))
             except socket.timeout as e:
                 if str(e) == 'timed out':
-                     enviar_sms(data['projetos'][projeto], projeto, str(e.reason))
+                     enviar_sms(data['projetos'][projeto], projeto, str(e))
             except:
                 enviar_sms(data['projetos'][projeto], projeto, 'Valha-me deus, erro desconhecido')
 
